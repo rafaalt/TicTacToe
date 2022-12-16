@@ -14,11 +14,41 @@ section{
     width: 500px;
     height: 500px;
     margin: auto;
-    text-align: center;
+
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.51);
 }
 footer{
     color: rgb(26, 26, 114);
     text-align: center;
     font-style: italic;
+}
+.linha{
+    display: flex;
+    align-items: center;
+}
+.cell{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(205, 205, 216);
+    font: bold 80px Arial;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: 1px solid black;
+}
+.campo{
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+.btn{
+    align-items: center;
+    font: normal 20px Arial;
+    padding: 10px;
+}
+.vezAtual{
+    font: 30px Arial;
+    padding: 10px;
 }

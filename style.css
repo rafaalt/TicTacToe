@@ -14,7 +14,6 @@ section{
     width: 500px;
     height: 500px;
     margin: auto;
-
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.51);
 }
 footer{
@@ -29,7 +28,7 @@ footer{
 .cell{
     width: 100px;
     height: 100px;
-    background-color: rgb(205, 205, 216);
+    background-color: rgb(243, 242, 252);
     font: bold 80px Arial;
     align-items: center;
     justify-content: center;

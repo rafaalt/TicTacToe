@@ -5,7 +5,9 @@ var turnoP1 = true
 var jogador1 = [];
 var jogador2 = [];
 var cellsPreenchidas;
-
+var venceu = 0;
+var venceu2 = 0;
+var temVencedor = false;
 const combinacoes = [
     [0,1,2],
     [3,4,5],
@@ -51,6 +53,7 @@ function jogar(i){
 }
 
 function reiniciar(){
+    temVencedor = false;
     turnoP1 = true;
     cellsPreenchidas = 0;
     jogador1 = [];
@@ -59,11 +62,11 @@ function reiniciar(){
     for(let i = 0; i < cells.length; i++){
         cells[i].setAttribute("value", 0);
         cells[i].innerHTML = "";
+        cells[i].style.backgroundColor = "white";
     }
 }
 
 function verificaVencedor1(){
-    var venceu = 0;
     for(let aux = 0;aux<combinacoes.length;aux++){
         venceu = 0;
         for(let aux2=0;aux2<3;aux2++){
@@ -73,15 +76,21 @@ function verificaVencedor1(){
             }
         }
         if(venceu == 3){
-            alert("Jogador 1 Venceu!")
+            temVencedor = true;
+            cells[combinacoes[aux][0]].style.backgroundColor = "yellow";
+            cells[combinacoes[aux][1]].style.backgroundColor = "yellow";
+            cells[combinacoes[aux][2]].style.backgroundColor = "yellow";
+            setTimeout(function() {
+            alert("Jogador 1 Venceu!!")
             reiniciar();
+            }, 0005);
+            
         } 
     }
     verificaVelha();
 }
 
 function verificaVencedor2(){
-    var venceu2 = 0;
     for(let aux = 0;aux<combinacoes.length;aux++){
         venceu2 = 0;
         for(let aux2=0;aux2<3;aux2++){
@@ -92,15 +101,21 @@ function verificaVencedor2(){
             }
         }
         if(venceu2 == 3){
-            alert("Jogador 2 Venceu!")
+            temVencedor = true;
+            cells[combinacoes[aux][0]].style.backgroundColor = "yellow";
+            cells[combinacoes[aux][1]].style.backgroundColor = "yellow";
+            cells[combinacoes[aux][2]].style.backgroundColor = "yellow";
+            setTimeout(function() {
+            alert("Jogador 2 Venceu!!")
             reiniciar();
+            }, 0005);
         } 
     }
     verificaVelha();
 }
 
 function verificaVelha(){
-    if(cellsPreenchidas == 9){
+    if(cellsPreenchidas == 9 && !temVencedor){
         alert("Deu velha.")
         reiniciar();
     }
